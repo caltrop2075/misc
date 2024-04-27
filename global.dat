@@ -1,0 +1,129 @@
+# globally used variables
+
+# ----------------------------------------------------------------------- colors
+blk="\033[0;2;30m"               # dim
+red="\033[0;2;31m"
+grn="\033[0;2;32m"
+yel="\033[0;2;33m"
+blu="\033[0;2;34m"
+mag="\033[0;2;35m"
+cyn="\033[0;2;36m"
+wht="\033[0;2;37m"
+
+Blk="\033[0;30m"                 # normal
+Red="\033[0;31m"
+Grn="\033[0;32m"
+Yel="\033[0;33m"
+Blu="\033[0;34m"
+Mag="\033[0;35m"
+Cyn="\033[0;36m"
+Wht="\033[0;37m"
+
+BLk="\033[0;1;2;30m"             # bold dim     some terminals
+REd="\033[0;1;2;31m"
+GRn="\033[0;1;2;32m"
+YEl="\033[0;1;2;33m"
+BLu="\033[0;1;2;34m"
+MAg="\033[0;1;2;35m"
+CYn="\033[0;1;2;36m"
+WHt="\033[0;1;2;37m"
+
+BLK="\033[0;1;30m"               # bold         some terminals
+RED="\033[0;1;31m"
+GRN="\033[0;1;32m"
+YEL="\033[0;1;33m"
+BLU="\033[0;1;34m"
+MAG="\033[0;1;35m"
+CYN="\033[0;1;36m"
+WHT="\033[0;1;37m"
+
+nrm="\033[0m"                    # 0 add these after colors
+bld="\033[1m"                    # 1 bold
+dim="\033[2m"                    # 2 din
+itl="\033[3m"                    # 3 italic
+unl="\033[4m"                    # 4 underline
+                                 # 5 blink (nonfunc termux)
+bnk="\033[6m"                    # 6 blink
+rev="\033[7m"                    # 7 reverse, only way to get dim back,
+                                 # 8 blank
+stk="\033[9m"                    # 9 strike thru
+
+# -------------------------------------------------------------------- box chars
+# single line using escape sequences
+
+bk=$(echo -e "\x1b(0a\x1b(B")    # block        a
+
+vt=$(echo -e "\x1b(0x\x1b(B")    # vert         x
+hz=$(echo -e "\x1b(0q\x1b(B")    # horz         q
+
+lb=$(echo -e "\x1b(0m\x1b(B")    # left   bot   m
+lm=$(echo -e "\x1b(0t\x1b(B")    #        mid   t
+lt=$(echo -e "\x1b(0l\x1b(B")    #        top   l
+
+mb=$(echo -e "\x1b(0v\x1b(B")    # mid    bot   v
+mm=$(echo -e "\x1b(0n\x1b(B")    #        mid   n
+mt=$(echo -e "\x1b(0w\x1b(B")    #        top   w
+
+rb=$(echo -e "\x1b(0j\x1b(B")    # right  bot   j
+rm=$(echo -e "\x1b(0u\x1b(B")    #        mid   u
+rt=$(echo -e "\x1b(0k\x1b(B")    #        top   k
+
+# ------------------------------------------------------------- system dependent
+# gvs paths - need setting in .profile or .bashrc or here
+
+audio_1=$AUDIO_1
+audio_2=$AUDIO_2
+
+# --------------------------------------------------------------- standard stuff
+icons="$HOME/.icons"             # user icons
+ICONS="/usr/share/icons"         # system icons
+dly=3                            # default sleep delay
+
+# 80 col separators
+ div_c="#-------------------------------------------------------------------------------"
+ div_s="--------------------------------------------------------------------------------"
+ div_d="================================================================================"
+div_sl="────────────────────────────────────────────────────────────────────────────────"
+div_dl="════════════════════════════════════════════════════════════════════════════════"
+div_tl="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+ blank="                                                                                "
+
+# ------------------------------------------------------------------------ icons
+i_alien="/home/caltrop/.icons/EMOJI Fav/smiley/Extraterrestrial Alien Face.png"
+i_bio="$icons/EMOJI Fav/Biohazard Sign.png"
+i_cat="$icons/EMOJI Fav/Cat.png"
+i_comp="$icons/EMOJI/e technology/Desktop Computer.png"
+i_crazy="/home/caltrop/.icons/EMOJI Fav/smiley/Grinning One Large And One Small Eye Face.png"
+i_expl="$icons/EMOJI Fav/Collision Symbol.png"
+i_memo="$icons/EMOJI/e business/Memo.png"
+i_music="$icons/EMOJI Fav/Musical Score.png"
+i_rad="$icons/EMOJI Fav/Radioactive Sign.png"
+i_recy="$icons/EMOJI Fav/Black Universal Recycling Symbol.png"
+i_volt="$icons/EMOJI Fav/High Voltage Sign.png"
+i_warn="$icons/EMOJI Fav/Skull And Crossbones.png"
+
+i_droid="$ICONS/Mint-Y/apps/24@2x/androidstudio.png"
+i_edit="$ICONS/mate/48x48/apps/accessories-text-editor.png"
+i_lib="$ICONS/hicolor/48x48/apps/calibre-gui.png"
+i_link="$ICONS/mate/48x48/emblems/emblem-symbolic-link.png"
+i_netw="$ICONS/mate/48x48/devices/network-wireless.png"
+i_scrn="$ICONS/mate/48x48/apps/preferences-desktop-screensaver.png"
+i_stux="$ICONS/Mint-X/apps/48/supertux.png"
+i_warn2="$ICONS/Mint-Y/status/48/dialog-warning.png"
+i_wine="$ICONS/Mint-X/apps/48/wine.png"
+# ------------------------------------------------------------------------ emoji
+# echo -e "$e_cat1\n"
+# printf "$e_cat1 %s\n" "test"         escape stuff has to be in format string
+# unset LC_ALL                         necessary for display
+e_xbon="\u2620"   # ☠ doesn't display big
+e_skul="\U1F480"  # 💀
+e_expl="\U1F4A5"  # 💥
+e_mad1="\U1F620"  # 😠
+e_mad2="\U1F621"  # 😡
+e_cat1="\U1F63C"  # 😼
+e_updn="\U1F643"  # ️🙃️
+e_roll="\U1F644"  # ️🙄️
+e_crzy="\U1F92A"  # 🤪
+e_curs="\U1F92C"  # 🤬
+
+# ------------------------------------------------------------------------------
